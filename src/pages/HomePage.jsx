@@ -5,22 +5,21 @@ import './HomePage.css'
 export function HomePage(){
     const [products, setproducts] = useState([]);
     useEffect(()=>{
-      axios.get('http://localhost:3000/api/products')
+      axios.get('/api/products')
         .then((response)=>{
            setproducts(response.data);
             })  
     }, [])
     const [cart, setcart]=useState ([]);
     useEffect(()=>{
-        axios.get('http://localhost:3000/api/cart-items')
+        axios.get('/api/cart-items')
         .then((response)=>{
             setcart(response.data);
         });
-    })
+    }, [])
 
     return(
         <>
-        <title>ecommerce project</title>
            <Header cart={cart}/>
            <div className="home-page">
                     <div className="products-grid">
