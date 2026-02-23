@@ -33,5 +33,5 @@ export function CheckoutPage({ cart }){
         </div>
       </div>
     </>
-    );
+    ); 
 }
