@@ -10,15 +10,21 @@ export function Product({product, loadCart})
             quantity
         });
         await loadCart();
-    }
+        // Show the "Added to Cart" message for 1.5 seconds
+        setAdded(true);
+        setTimeout(() => {
+            setAdded(false);
+        }, 1500)
+    };
 
     const selectQuantity = (event)=> 
     {
         const quantitySelected = Number(event.target.value);
             setQuantity(quantitySelected);
-    }
+    };
 
     const [quantity, setQuantity] = useState(1);
+    const [added , setAdded] = useState(false);
                                return (
                         <div className="product-container">
                             <div className="product-image-container">
@@ -58,11 +64,12 @@ export function Product({product, loadCart})
 
                             <div className="product-spacer"></div>
 
-                            <div className="added-to-cart">
+                            
+                            <div className={`added-to-cart ${added ? "show" : ""}`}>
                                 <img src="images/icons/checkmark.png" />
                                 Added
                             </div>
-
+                            
                             <button className="add-to-cart-button button-primary"
                             onClick = {addTOCart}
                             > 
