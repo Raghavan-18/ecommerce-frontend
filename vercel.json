@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://ecommerce-backend-obr0.onrender.com/api/$1"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "https://ecommerce-backend-obr0.onrender.com/images/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -8,10 +8,12 @@ export default defineConfig({
     server:{
       proxy:{
       '/api':{
-        target: 'http://localhost:3000',
+        target: 'https://ecommerce-backend-obr0.onrender.com',
+        changeOrigin: true
       },
       '/images':{
-        target: 'http://localhost:3000',
+        target: 'https://ecommerce-backend-obr0.onrender.com',
+        changeOrigin: true
       }
     }
   }
